@@ -1,0 +1,77 @@
+{% extends "parent.html" %}
+{% load static %}
+
+{% block title %}Games{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-ms-12">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'laby:home' %}">Home</a></li>
+              <li class="breadcrumb-item active">Games</li>
+            </ol>
+
+            <h1>Games</h1>
+
+            <div class="text-right">
+                <a class="btn btn-primary" href="{% url 'laby:game-create' %}">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    New Game
+                </a>
+            </div>
+            
+            {% if most_recent_game %}
+            <div class="text-right">
+                <a class="btn btn-primary" href="{% url 'laby:game-play' most_recent_game.pk %}">
+                    <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                    Continue Game
+                </a>
+            </div>
+            {% endif %}
+            
+
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-{% if message.tags == "success" or message.tags == "warning" %}{{ message.tags }}{% elif message.tags == "error" %}danger{% else %}info{% endif %}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+
+            <h2>My Games</h2>
+
+            {% if games %}
+               <table class="table table-striped">
+                   <thead class="thead-default">
+                        <tr>
+                            <th>Started</th>
+                            <th>Players</th>
+                            <th>Cards discovered</th>
+                            <th>Cards to discover</th>
+                            <th>Continue game</th>
+                        </tr>
+                    </thead>
+                   <tbody>
+                    {% for game in games %}
+                        <tr>
+                            <td class="laby-td-20-top">game.evt_started</td>
+                            <td class="laby-td-20-top">game.players</td>
+                            <td class="laby-td-20-top">game.cards_discovered</td>
+                            <td class="laby-td-20-top">game.cards_to_discover</td>
+                            <td class="laby-td-20-top">                                 
+                                <a href="{% url "laby:game-continue" project.pk %}" class="btn btn-default" data-toggle="tooltip" title="Delete">
+                                    <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                                    Continue Game
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                   </tbody>
+               </table>
+            {% else %}
+                <div class="alert alert-info">There are no games</div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

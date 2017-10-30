@@ -1,0 +1,79 @@
+{% extends "parent.html" %}
+{% load static %}
+
+{% block title %}Players{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-ms-20">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'laby:home' %}">Home</a></li>
+              <li class="breadcrumb-item active">Players</li>
+            </ol>
+
+            
+            <div class="text-right">
+                <a class="btn btn-primary" href="{% url 'laby:player-create' %}">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    New Player
+                </a>
+            </div>
+            
+            <h1>Players</h1>
+
+                <table class="table table-striped">
+                    <thead class="thead-default">
+                        <tr>
+                            <th>Name</th>
+                            <th>Current color</th>
+                            <th>Current score</th>
+                            <th>Game history</th>
+                            <th>Continue game</th>
+                            <th>Actions</th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                        {% if players %}
+                            {% for player in players %}
+                                <tr>
+                                    <td class="laby-td-20-top">{{ player.name }}</td>
+                                    <td class="laby-td-10-top">{{ player.current_color }}</td>
+                                    <td class="laby-td-10-top">{{ player.current_score }}</td>
+                                    <td class="laby-td-20-top">
+                                        {% if player.game_history.query_set %}
+                                        {% for game in player.game_history.query_set %}
+                                        <p>
+                                            <a href="{% url 'laby:game-detail' game.pk %}">
+                                                {{ game.evt_created }}
+                                            </a>
+                                        </p>
+                                        {% endfor %}
+                                        {% else %}
+                                        <p>
+                                            History is empty
+                                        </p>
+                                        {% endif %}
+                                    </td>
+                                    <td class="laby-td-20-top">
+                                        {% if player.most_recent_game %}
+                                        <a href={% url 'laby:game-play' player.most_recent_game.pk %}Continue game></a>
+                                        {% else %}
+                                        <p>No game to continue</p>
+                                        {% endif %}
+                                    </td>
+                                    <td class="laby-td-20-top">
+                                        <a href="{% url "laby:player-delete" player.pk %}" class="btn btn-default" data-toggle="tooltip" title="Delete">
+                                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% endif %}
+                    </tbody>
+                </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

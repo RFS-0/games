@@ -1,0 +1,26 @@
+{% extends "parent.html" %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div class="container">
+    <!-- Jumbotron -->
+    <div class="jumbotron-fluid">
+    
+    <h1>Labyrinth game</h1>
+
+        <p>Playground to come up with an agent that can play the labyrinth game</p>
+
+        <p>You can do the following:</p>
+
+            <ul>
+                <li><a href={% url 'laby:player-create' %}>Create a player</a></li>
+                <li><a href={% url 'laby:game-create' %}>Create a game</a></li>
+                <li><a href={% url 'laby:game-list' %}>Continue a game</a></li>
+            </ul>
+
+        <p>If you want to play yourself, you have to create a player frist</p>
+
+</div>
+{% endblock %}

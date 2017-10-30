@@ -1,0 +1,37 @@
+{% extends "parent.html" %}
+{% load static %}
+
+{% block title %}
+    Delete Player &quot;{{player.name}}&quot;?
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'laby:home' %}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{% url 'laby:player-list' %}">players</a></li>
+              <li class="breadcrumb-item active">
+                    Delete player &quot;{{player.name}}&quot;?
+              </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Delete player &quot;{{player.name}}&quot;?</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form action="" method="post">{% csrf_token %}
+                <p>Are you sure you want to delete the player &quot;{{player.name}}&quot;?</p>
+                <input type="submit" value="Confirm" class="btn btn-primary" />
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

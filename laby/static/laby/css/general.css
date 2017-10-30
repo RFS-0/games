@@ -1,0 +1,188 @@
+/* ToC */
+
+#toc_container {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    display: table;
+    font-size: 95%;
+    margin-bottom: 1em;
+    padding: 20px;
+    width: auto;
+}
+
+.toc_title {
+	font-size: 150%;
+    font-weight: 700;
+    text-align: left;
+}
+
+#toc_container li, #toc_container ul, #toc_container ul li{
+    list-style: outside none none !important;
+}
+
+/* wrapping */
+
+.dpmfa-pre-wrap {
+    white-space: pre-wrap;
+}
+
+.dpmfa-no-wrap {
+	white-space: no-wrap;
+}
+
+/* text */
+.dpmfa-txt-center {
+	vertical-align: center;
+}
+
+/* table */
+
+.dpmfa-td-5-top {
+	width: 5%;
+	vertical-align: top;
+}
+
+.dpmfa-td-7-top {
+	width: 7%;
+	vertical-align: top;
+}
+
+.dpmfa-td-8-top {
+	width: 8%;
+	vertical-align: top;
+}
+
+.dpmfa-td-9-top {
+	width: 9%;
+	vertical-align: top;
+}
+
+.dpmfa-td-10-top {
+	width: 10%;
+	vertical-align: top;
+}
+
+.dpmfa-td-11-top {
+	width: 11%;
+	vertical-align: top;
+}
+
+.dpmfa-td-20-top {
+	width: 20%;
+	vertical-align: top;
+}
+
+.dpmfa-td-25-top {
+	width: 25%;
+	vertical-align: top;
+}
+
+.dpmfa-td-30-top {
+	width: 30%;
+	vertical-align: top;
+}
+
+.dpmfa-td-40-top {
+	width: 40%;
+	vertical-align: top;
+}
+
+.dpmfa-td-45top {
+	width: 45%;
+	vertical-align: top;
+}
+
+.dpmfa-td-50-top {
+	width: 50%;
+	vertical-align: top;
+}
+
+.dpmfa-td-55-top {
+	width: 55%;
+	vertical-align: top;
+}
+
+.dpmfa-td-60-top {
+	width: 60%;
+	vertical-align: top;
+}
+
+.dpmfa-td-59-top {
+	width: 59	%;
+	vertical-align: top;
+}
+
+.dpmfa-td-60-top {
+	width: 65%;
+	vertical-align: top;
+}
+
+.dpmfa-td-70-top {
+	width: 70%;
+	vertical-align: top;
+}
+
+.dpmfa-td-75-top {
+	width: 75%;
+	vertical-align: top;
+}
+
+.dpmfa-td-80-top {
+	width: 80%;
+	vertical-align: top;
+}
+
+.dpmfa-td-90-top {
+	width: 90%;
+	vertical-align: top;
+}
+
+.dpmfa-td-5-middle {
+	width: 5%;
+	vertical-align: middle;
+}
+
+.dpmfa-td-10-middle {
+	width: 10%;
+	vertical-align: middle;
+}
+
+.dpmfa-td-20-middle {
+	width: 20%;
+	vertical-align: middle;
+}
+
+.dpmfa-td-30-middle {
+	width: 30%;
+	vertical-align: middle;
+}
+
+.dpmfa-td-40-middle {
+	width: 40%;
+	vertical-align: middle;
+}
+
+.dpmfa-td-50-middle {
+	width: 50%;
+	vertical-align: middle;
+}
+
+.dpmfa-td-60-middle {
+	width: 60%;
+	vertical-align: middle;
+}
+
+.dpmfa-td-70-middle {
+	width: 70%;
+	vertical-align: middle;
+}
+
+.dpmfa-td-80-middle {
+	width: 80%;
+	vertical-align: middle;
+}
+
+.dpmfa-td-90-middle {
+	width: 90%;
+	vertical-align: middle;
+}

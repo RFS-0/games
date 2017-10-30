@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %}LABY{% endblock %}</title>
+
+    <!-- ########## SCRIPTS ########## -->
+
+    <!-- GENERAL PURPOSE THIRD PARTY LIBS -->
+    <script type="text/javascript" src="{% static 'laby/js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'laby/js/tether.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'laby/js/bootstrap.min.js' %}"></script>
+
+    <!-- MODIFICATION / CONFIGURATION / USE 1 -->
+    <script type="text/javascript" src="{% static 'laby/js/general.js' %}"></script>
+
+    <!-- VIEW SPECIFIC SCRIPTS -->
+    {% block viewSpecificJsLibs %}<!-- none for this view -->{% endblock %}
+
+    <!-- ########## STYLESHEETS ########## -->
+
+    <!-- GENERAL PURPOSE THIRD PARTY STYLESHEETS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'laby/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'laby/css/bootstrap-theme.min.css' %}" />
+
+    <!-- MODIFICATION / CONFIGURATION / USE 1 -->
+    <link rel="stylesheet" type="text/css" href="{% static 'laby/css/general.css' %}" />
+
+    <!-- VIEW SPECIFIC STYLESHEETS -->
+    {% block viewSpecificCssLibs %}<!-- none for this view -->{% endblock %}
+</head>
+<body>
+{% block header %}
+<!-- Navigation -->
+<header>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{% url 'laby:home' %}">LABY</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li {% if view.context_object_name == 'home' %} class="active" {% endif %}><a href="{% url 'laby:home' %}">Home</a></li>
+          <li {% if view.context_object_name == 'games' %} class="active" {% endif %}><a href="{% url 'laby:game-list' %}">Games</a></li>
+          <li {% if view.context_object_name == 'players' %} class="active" {% endif %}><a href="{% url 'laby:player-list' %}">Players</a></li>
+        </ul>
+      </div>
+</nav>
+</header>
+{% endblock %}
+
+{% block body %}
+{% endblock %}
+
+</body>
+</html>
